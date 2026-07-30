@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { trackDevisConversion } from "@/lib/analytics";
 
 const PROJECT_TYPES = [
   "Particulier — maison individuelle",
@@ -67,6 +68,9 @@ export function EstimateForm() {
       }
 
       setDevMode(Boolean(data.dev));
+      if (!data.dev) {
+        trackDevisConversion();
+      }
       setSubmitted(true);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Erreur inconnue");

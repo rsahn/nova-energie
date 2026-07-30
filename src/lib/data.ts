@@ -10,7 +10,7 @@ export const SITE = {
   email: "sahnounramy@gmail.com",
   address: "Voisins-le-Bretonneux, 78960",
   since: 2018,
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://nova-energie-solaire.fr",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.nova-energie-solaire.fr",
   googleRating: 5.0,
   googleReviewCount: 3,
   coordinates: { lat: 48.7578, lng: 2.0512 },
