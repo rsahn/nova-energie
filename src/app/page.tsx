@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { CtaBanner } from "@/components/sections/CtaBanner";
 import { Features } from "@/components/sections/Features";
 import { Hero } from "@/components/sections/Hero";
@@ -34,6 +35,28 @@ export default function HomePage() {
       <Testimonials />
       <Partners />
       <Features />
+
+      <section className="border-t border-gray-100 bg-white py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <h2 className="text-2xl font-bold text-navy-900">
+            Panneau solaire dans les Yvelines (78)
+          </h2>
+          <p className="mt-4 max-w-3xl text-gray-600">
+            Installateur certifié RGE, Nova Énergie pose des panneaux
+            photovoltaïques dans tout le département 78 : Montigny-le-Bretonneux,
+            Trappes, Guyancourt, Versailles, Élancourt et les communes
+            environnantes. Autoconsommation, aides de l&apos;État et devis
+            gratuit sous 48 h.
+          </p>
+          <Link
+            href="/panneaux-solaires/yvelines-78"
+            className="mt-6 inline-block text-sm font-medium text-solar-700 hover:underline"
+          >
+            En savoir plus sur le panneau solaire 78 →
+          </Link>
+        </div>
+      </section>
+
       <CtaBanner />
     </>
   );

@@ -7,13 +7,16 @@ import { REALISATIONS } from "@/lib/data";
 interface RealisationsGridProps {
   limit?: number;
   showTitle?: boolean;
+  filter?: (item: (typeof REALISATIONS)[number]) => boolean;
 }
 
 export function RealisationsGrid({
   limit,
   showTitle = true,
+  filter,
 }: RealisationsGridProps) {
-  const items = limit ? REALISATIONS.slice(0, limit) : REALISATIONS;
+  let items = filter ? REALISATIONS.filter(filter) : REALISATIONS;
+  if (limit) items = items.slice(0, limit);
 
   return (
     <section className={showTitle ? "py-20 bg-gray-50" : ""}>

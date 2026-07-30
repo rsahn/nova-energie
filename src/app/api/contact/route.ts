@@ -14,20 +14,25 @@ export interface ContactPayload {
 }
 
 async function sendViaSmtp(payload: ContactPayload) {
-  const host = process.env.SMTP_HOST;
-  const user = process.env.SMTP_USER;
-  const pass = process.env.SMTP_PASS;
+  const host = process.env.SMTP_HOST?.trim();
+  const user = process.env.SMTP_USER?.trim();
+  // Google affiche le mot de passe application par groupes de 4 — sans espaces
+  const pass = process.env.SMTP_PASS?.replace(/\s/g, "");
 
   if (!host || !user || !pass) return false;
 
+  const port = Number(process.env.SMTP_PORT ?? 587);
+  const secure = process.env.SMTP_SECURE === "true" || port === 465;
+
   const transporter = nodemailer.createTransport({
     host,
-    port: Number(process.env.SMTP_PORT ?? 587),
-    secure: process.env.SMTP_SECURE === "true",
+    port,
+    secure,
     auth: { user, pass },
+    ...(port === 587 && !secure ? { requireTLS: true } : {}),
   });
 
-  const to = process.env.CONTACT_EMAIL ?? SITE.email;
+  const to = process.env.CONTACT_EMAIL?.trim() ?? SITE.email;
 
   await transporter.sendMail({
     from: `"${SITE.name}" <${user}>`,
@@ -120,8 +125,16 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Email invalide" }, { status: 400 });
     }
 
-    const sent =
-      (await sendViaResend(body)) || (await sendViaSmtp(body));
+    let sent = false;
+    try {
+      sent = (await sendViaResend(body)) || (await sendViaSmtp(body));
+    } catch (error) {
+      console.error("Contact email error:", error);
+      return NextResponse.json(
+        { error: "Erreur lors de l'envoi. Vérifiez la configuration email." },
+        { status: 500 }
+      );
+    }
 
     if (!sent) {
       console.log("[CONTACT — mode dev, email non configuré]", body);

@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { Logo } from "@/components/layout/Logo";
-import { LEGAL_LINKS, NAV_ITEMS, SITE } from "@/lib/data";
+import { LEGAL_LINKS, LOCAL_CITIES, NAV_ITEMS, SITE } from "@/lib/data";
 
 export function Footer() {
   return (
     <footer className="bg-navy-900 text-gray-300">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-4">
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-2 lg:grid-cols-5">
         <div className="md:col-span-1">
           <Logo variant="light" />
           <p className="mt-4 text-sm leading-relaxed">
@@ -41,6 +41,27 @@ export function Footer() {
                 Estimer mon projet
               </Link>
             </li>
+          </ul>
+        </div>
+
+        <div>
+          <p className="mb-4 font-semibold text-white">Zones d&apos;intervention</p>
+          <ul className="space-y-2 text-sm">
+            <li>
+              <Link href="/panneaux-solaires/yvelines-78" className="font-medium text-solar-100 hover:text-white">
+                Panneau solaire 78 (Yvelines)
+              </Link>
+            </li>
+            {LOCAL_CITIES.map((city) => (
+              <li key={city.slug}>
+                <Link
+                  href={`/panneaux-solaires/${city.slug}`}
+                  className="hover:text-solar-100"
+                >
+                  Panneaux solaires {city.name}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 

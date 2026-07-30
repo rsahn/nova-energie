@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { SITE, SERVICES } from "@/lib/data";
+import { LOCAL_CITIES, SITE, SERVICES } from "@/lib/data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = SITE.url;
@@ -20,10 +20,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     (s) => `/panneaux-photovoltaiques/${s.slug}`
   );
 
-  return [...staticPages, ...servicePages].map((path) => ({
+  const cityPages = LOCAL_CITIES.map((c) => `/panneaux-solaires/${c.slug}`);
+
+  const localPages = [...cityPages, "/panneaux-solaires/yvelines-78"];
+
+  return [...staticPages, ...servicePages, ...localPages].map((path) => ({
     url: `${base}${path}`,
     lastModified: new Date(),
     changeFrequency: path === "" ? "weekly" : "monthly",
-    priority: path === "" ? 1 : path.includes("estimer") ? 0.9 : 0.7,
+    priority:
+      path === ""
+        ? 1
+        : path.includes("yvelines-78")
+          ? 0.95
+          : path.includes("estimer")
+            ? 0.9
+            : path.includes("panneaux-solaires")
+              ? 0.85
+              : 0.7,
   }));
 }

@@ -15,10 +15,10 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: `${SITE.name} — Installateur panneaux solaires ${SITE.department}`,
+    default: `${SITE.name} — Panneau solaire 78 | Installateur Yvelines RGE`,
     template: `%s | ${SITE.name}`,
   },
-  description: `Installateur de panneaux photovoltaïques certifié RGE à ${SITE.city}. Autoconsommation, économies d'énergie et aides de l'État en ${SITE.region}. Devis gratuit.`,
+  description: `Installateur panneau solaire dans les Yvelines (78). ${SITE.name}, certifié RGE à ${SITE.city} : autoconsommation, devis gratuit, aides État. Intervention SQY, Versailles, Trappes et tout le 78.`,
   keywords: SITE.seoKeywords,
   openGraph: {
     type: "website",

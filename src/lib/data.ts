@@ -15,10 +15,15 @@ export const SITE = {
   googleReviewCount: 3,
   coordinates: { lat: 48.7578, lng: 2.0512 },
   seoKeywords: [
+    "panneau solaire 78",
+    "panneaux solaires 78",
     "panneaux solaires Yvelines",
     "installateur photovoltaïque 78",
+    "installateur panneau solaire Yvelines",
     "Nova Énergie",
     "panneaux solaires Voisins-le-Bretonneux",
+    "panneaux solaires Montigny-le-Bretonneux",
+    "panneau solaire Montigny-le-Bretonneux",
     "autoconsommation Île-de-France",
     "installateur RGE Yvelines",
   ],
@@ -350,4 +355,135 @@ export const LEGAL_LINKS = [
   { label: "Mentions légales", href: "/mentions-legales" },
   { label: "Politique de confidentialité", href: "/politique-de-confidentialite" },
   { label: "Politique cookies", href: "/politique-cookies" },
+];
+
+export interface LocalCity {
+  slug: string;
+  name: string;
+  postalCode: string;
+  intro: string;
+  distance: string;
+  highlights: string[];
+}
+
+/** Pages SEO locales — villes desservies en Yvelines */
+export const LOCAL_CITIES: LocalCity[] = [
+  {
+    slug: "montigny-le-bretonneux",
+    name: "Montigny-le-Bretonneux",
+    postalCode: "78180",
+    distance: "5 min de notre base à Voisins-le-Bretonneux",
+    intro:
+      "Nova Énergie installe des panneaux solaires à Montigny-le-Bretonneux et dans tout le Saint-Quentin-en-Yvelines. Installateur certifié RGE, nous réalisons des projets en autoconsommation pour les maisons individuelles, copropriétés et locaux professionnels du quartier de la Ville-Neuve, du Pas du Lac et des Chênaux.",
+    highlights: [
+      "Devis gratuit sous 48 h à Montigny-le-Bretonneux",
+      "Installations réalisées dans le 78180",
+      "Éligible prime autoconsommation et TVA 10 %",
+      "Accompagnement administratif EDF OA",
+    ],
+  },
+  {
+    slug: "voisins-le-bretonneux",
+    name: "Voisins-le-Bretonneux",
+    postalCode: "78960",
+    distance: "Installateur basé sur place",
+    intro:
+      "Basés à Voisins-le-Bretonneux depuis 2018, nous sommes votre installateur de proximité pour le photovoltaïque en autoconsommation dans les Yvelines.",
+    highlights: [
+      "Entreprise locale — intervention rapide",
+      "Plus de 2 500 panneaux installés",
+      "Certifié QualifElec et RGE",
+      "SAV réactif sur place",
+    ],
+  },
+  {
+    slug: "trappes",
+    name: "Trappes",
+    postalCode: "78190",
+    distance: "15 min de Voisins-le-Bretonneux",
+    intro:
+      "Installation de panneaux photovoltaïques à Trappes pour particuliers et professionnels. Étude de rentabilité personnalisée et pose par des techniciens certifiés.",
+    highlights: [
+      "Projets particuliers et tertiaire à Trappes",
+      "Étude de toiture et ombrage incluse",
+      "Monitoring de production",
+      "Garantie panneaux 25 ans",
+    ],
+  },
+  {
+    slug: "guyancourt",
+    name: "Guyancourt",
+    postalCode: "78280",
+    distance: "10 min de Voisins-le-Bretonneux",
+    intro:
+      "Panneaux solaires à Guyancourt : Nova Énergie accompagne les habitants et entreprises du quartier de Bougival, des Saules et du plateau de Saclay.",
+    highlights: [
+      "Installateur RGE en Guyancourt",
+      "Autoconsommation avec revente du surplus",
+      "Aides de l'État prises en charge",
+      "Réalisations de référence dans le 78",
+    ],
+  },
+  {
+    slug: "saint-quentin-en-yvelines",
+    name: "Saint-Quentin-en-Yvelines",
+    postalCode: "78180",
+    distance: "Au cœur de notre zone d'intervention",
+    intro:
+      "Installateur panneaux solaires à Saint-Quentin-en-Yvelines (SQY) : Montigny, Trappes, Guyancourt, Élancourt… Nova Énergie intervient sur l'ensemble de l'agglomération.",
+    highlights: [
+      "Couverture complète SQY",
+      "Particuliers, pros et collectivités",
+      "Devis gratuit sans engagement",
+      "Certifications QualifElec et RGE",
+    ],
+  },
+  {
+    slug: "versailles",
+    name: "Versailles",
+    postalCode: "78000",
+    distance: "25 min de Voisins-le-Bretonneux",
+    intro:
+      "Installation de panneaux solaires à Versailles et dans les communes environnantes. Nova Énergie, installateur RGE dans les Yvelines (78), vous accompagne de l'étude de faisabilité à la mise en service.",
+    highlights: [
+      "Installateur certifié RGE dans le 78",
+      "Autoconsommation et revente surplus EDF OA",
+      "Étude personnalisée gratuite",
+      "Garantie panneaux 25 ans",
+    ],
+  },
+  {
+    slug: "elancourt",
+    name: "Élancourt",
+    postalCode: "78990",
+    distance: "10 min de Voisins-le-Bretonneux",
+    intro:
+      "Panneaux photovoltaïques à Élancourt : pose clé en main pour maisons et entreprises du plateau de Saint-Quentin-en-Yvelines.",
+    highlights: [
+      "Intervention rapide à Élancourt",
+      "Prime autoconsommation incluse",
+      "Monitoring de production",
+      "SAV local réactif",
+    ],
+  },
+];
+
+/** Villes principales du 78 — page département */
+export const YVELINES_CITIES = [
+  "Versailles",
+  "Montigny-le-Bretonneux",
+  "Trappes",
+  "Guyancourt",
+  "Voisins-le-Bretonneux",
+  "Élancourt",
+  "Rambouillet",
+  "Poissy",
+  "Saint-Germain-en-Laye",
+  "Conflans-Sainte-Honorine",
+  "Les Mureaux",
+  "Plaisir",
+  "Maurepas",
+  "Houilles",
+  "Chatou",
+  "Verneuil-sur-Seine",
 ];

@@ -25,6 +25,11 @@ export function getLocalBusinessJsonLd() {
       longitude: SITE.coordinates.lng,
     },
     areaServed: [
+      { "@type": "City", name: "Montigny-le-Bretonneux" },
+      { "@type": "City", name: "Voisins-le-Bretonneux" },
+      { "@type": "City", name: "Trappes" },
+      { "@type": "City", name: "Guyancourt" },
+      { "@type": "AdministrativeArea", name: "Saint-Quentin-en-Yvelines" },
       { "@type": "AdministrativeArea", name: "Yvelines" },
       { "@type": "AdministrativeArea", name: "Essonne" },
       { "@type": "AdministrativeArea", name: "Île-de-France" },
