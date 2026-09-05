@@ -1,7 +1,6 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { REALISATIONS } from "@/lib/data";
 
 const InstallationsMapInner = dynamic(
   () =>
@@ -33,10 +32,10 @@ export function InstallationsMap({
         {showTitle && (
           <div className="mb-8 text-center">
             <h2 className="text-3xl font-bold text-navy-900 md:text-4xl">
-              Nos installations en France
+              Zones de projets photovoltaïques
             </h2>
             <p className="mt-4 text-gray-600">
-              Plus de {REALISATIONS.length} chantiers réalisés en Île-de-France
+              Exemples de projets et de secteurs couverts en Île-de-France
             </p>
           </div>
         )}
@@ -47,7 +46,7 @@ export function InstallationsMap({
               href="/realisations"
               className="text-sm font-medium text-solar-600 hover:text-solar-700"
             >
-              Voir toutes nos réalisations →
+              Voir tous les projets →
             </a>
           </p>
         )}

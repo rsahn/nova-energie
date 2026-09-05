@@ -18,15 +18,13 @@ export default function MentionsLegalesPage() {
         <p>
           {legal.companyName}
           <br />
-          Siège social : {SITE.address}
+          Forme juridique : {legal.legalForm}
           <br />
-          SIRET : {legal.siret}
+          Siège : {legal.registeredOffice}
           <br />
-          RCS : {legal.rcs}
+          SIREN : {legal.siren}
           <br />
-          N° TVA : {legal.tva}
-          <br />
-          Capital social : {legal.capital}
+          SIRET de l&apos;établissement principal : {legal.siret}
           <br />
           Directeur de la publication : {legal.director}
           <br />

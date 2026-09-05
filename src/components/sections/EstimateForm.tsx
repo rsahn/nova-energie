@@ -34,6 +34,7 @@ export function EstimateForm() {
     projectType: "",
     roofType: "",
     message: "",
+    partnerConsent: false,
   });
 
   const update = (field: keyof typeof form, value: string) => {
@@ -58,6 +59,7 @@ export function EstimateForm() {
           projectType: form.projectType,
           roofType: form.roofType || undefined,
           message: form.message || undefined,
+          partnerConsent: form.partnerConsent,
         }),
       });
 
@@ -86,7 +88,8 @@ export function EstimateForm() {
           Demande envoyée avec succès !
         </p>
         <p className="mt-2 text-gray-600">
-          Nous vous recontactons sous 48h pour une étude personnalisée.
+          Nova Énergie vous recontacte sous 48 h pour qualifier votre besoin et,
+          avec votre accord, vous mettre en relation avec une entreprise partenaire.
         </p>
         {devMode && (
           <p className="mt-4 text-xs text-amber-700 bg-amber-50 rounded-md p-3">
@@ -175,6 +178,24 @@ export function EstimateForm() {
           className="w-full max-w-xs rounded-md border border-gray-300 px-4 py-2.5 text-sm focus:border-solar-600 focus:outline-none focus:ring-1 focus:ring-solar-600"
         />
       </div>
+
+      <label className="flex items-start gap-3 text-sm text-gray-600">
+        <input
+          required
+          type="checkbox"
+          checked={form.partnerConsent}
+          onChange={(e) =>
+            setForm((prev) => ({ ...prev, partnerConsent: e.target.checked }))
+          }
+          className="mt-1 h-4 w-4 rounded border-gray-300 text-solar-600"
+        />
+        <span>
+          J&apos;accepte que Nova Énergie transmette les informations de ma
+          demande à une entreprise partenaire indépendante afin qu&apos;elle puisse
+          étudier le projet, établir son devis et, si je l&apos;accepte, réaliser
+          les travaux.
+        </span>
+      </label>
 
       <div>
         <label htmlFor="projectType" className="mb-1.5 block text-sm font-medium text-gray-700">

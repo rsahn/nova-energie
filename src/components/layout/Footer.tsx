@@ -10,9 +10,9 @@ export function Footer() {
         <div className="md:col-span-1">
           <Logo variant="light" />
           <p className="mt-4 text-sm leading-relaxed">
-            Installateur de panneaux photovoltaïques certifié RGE depuis{" "}
-            {SITE.since}. Accompagnement complet de l&apos;étude à la mise en
-            service.
+            Service d&apos;accompagnement et de mise en relation pour les projets
+            photovoltaïques dans les Yvelines. Les travaux sont contractés et
+            réalisés par une entreprise partenaire indépendante.
           </p>
         </div>
 
@@ -66,12 +66,12 @@ export function Footer() {
         </div>
 
         <div>
-          <p className="mb-4 font-semibold text-white">Certifications</p>
+          <p className="mb-4 font-semibold text-white">Nos engagements</p>
           <ul className="space-y-2 text-sm">
-            <li>QualifElec</li>
-            <li>RGE — Reconnu Garant de l&apos;Environnement</li>
+            <li>Étude personnalisée</li>
+            <li>Mise en relation sans engagement</li>
             <li>Garantie panneaux 25 ans</li>
-            <li>Assurance décennale</li>
+            <li>Partenaire indépendant pour les travaux</li>
           </ul>
         </div>
 

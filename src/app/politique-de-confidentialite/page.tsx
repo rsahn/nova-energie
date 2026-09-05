@@ -39,8 +39,8 @@ export default function PrivacyPage() {
           <p className="mt-2">
             Via le formulaire « Estimer mon projet », nous collectons : nom,
             prénom, email, téléphone, code postal, type de projet et message
-            libre. Ces données sont nécessaires pour traiter votre demande de
-            devis.
+            libre et votre consentement à la mise en relation. Ces données sont
+            nécessaires pour qualifier votre demande.
           </p>
         </section>
 
@@ -50,15 +50,28 @@ export default function PrivacyPage() {
           </h2>
           <p className="mt-2">
             Vos données sont traitées pour répondre à votre demande de contact
-            (base légale : exécution de mesures précontractuelles, art. 6.1.b
-            RGPD) et, avec votre consentement, pour vous envoyer des
-            communications commerciales.
+            et préparer la mise en relation sollicitée. Leur transmission à une
+            entreprise partenaire indépendante repose sur votre consentement.
+            Vous pouvez retirer ce consentement avant la transmission.
           </p>
         </section>
 
         <section>
           <h2 className="text-xl font-semibold text-navy-900">
-            4. Durée de conservation
+            4. Destinataires des données
+          </h2>
+          <p className="mt-2">
+            Nova Énergie est le premier destinataire de votre demande. Avec
+            votre accord, les informations utiles sont transmises à une
+            entreprise partenaire indépendante qui devient responsable de ses
+            propres traitements, de son devis et de sa relation contractuelle
+            avec vous.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-semibold text-navy-900">
+            5. Durée de conservation
           </h2>
           <p className="mt-2">
             Les données de contact sont conservées 3 ans à compter du dernier
@@ -67,7 +80,7 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="text-xl font-semibold text-navy-900">5. Vos droits</h2>
+          <h2 className="text-xl font-semibold text-navy-900">6. Vos droits</h2>
           <p className="mt-2">
             Vous disposez d&apos;un droit d&apos;accès, de rectification,
             d&apos;effacement, de limitation, d&apos;opposition et de
@@ -89,7 +102,7 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="text-xl font-semibold text-navy-900">6. Cookies</h2>
+          <h2 className="text-xl font-semibold text-navy-900">7. Cookies</h2>
           <p className="mt-2">
             Consultez notre{" "}
             <Link href="/politique-cookies" className="text-solar-600 underline">

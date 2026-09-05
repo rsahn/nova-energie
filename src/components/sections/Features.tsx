@@ -1,4 +1,4 @@
-import { Award, Leaf, PiggyBank, Users } from "lucide-react";
+import { ClipboardCheck, Leaf, PiggyBank, Users } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
 const FEATURES = [
@@ -15,16 +15,16 @@ const FEATURES = [
       "Réduisez votre facture de 30 à 70% grâce à l'autoconsommation solaire.",
   },
   {
-    icon: Award,
-    title: "Certifié RGE",
+    icon: ClipboardCheck,
+    title: "Étude personnalisée",
     description:
-      "Installateur QualifElec & RGE — éligible aux aides de l'État.",
+      "Une étude adaptée à votre toiture, à vos usages et à votre budget.",
   },
   {
     icon: Users,
-    title: "Accompagnement complet",
+    title: "Mise en relation",
     description:
-      "De l'étude de faisabilité à la mise en service et le suivi après-vente.",
+      "Un partenaire indépendant prend en charge le devis, les travaux et les garanties.",
   },
 ];
 

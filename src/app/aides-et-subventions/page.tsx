@@ -8,7 +8,7 @@ import { STATE_AIDS } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Aides et subventions panneaux solaires",
   description:
-    "Prime autoconsommation, TVA réduite, Éco-PTZ et aides de l'État pour votre installation photovoltaïque. Installateur RGE éligible.",
+    "Informations sur la prime à l'autoconsommation, la TVA et les dispositifs applicables à votre projet photovoltaïque.",
 };
 
 export default function AidesPage() {
@@ -21,8 +21,8 @@ export default function AidesPage() {
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-gray-300">
             Profitez des dispositifs de l&apos;État pour financer votre
-            installation photovoltaïque. En tant qu&apos;installateur RGE, nous
-            vous accompagnons dans toutes les démarches.
+            installation photovoltaïque. Nous vous aidons à identifier les
+            démarches et les conditions à vérifier pour votre projet.
           </p>
         </div>
       </section>
@@ -65,11 +65,11 @@ export default function AidesPage() {
           <div className="mt-12 rounded-xl bg-solar-50 p-8 text-center">
             <PiggyBank className="mx-auto mb-4 h-10 w-10 text-solar-600" />
             <h3 className="text-xl font-semibold text-navy-900">
-              Calculez vos aides avec un expert
+              Étudiez les dispositifs applicables à votre projet
             </h3>
             <p className="mx-auto mt-2 max-w-lg text-gray-600">
-              Chaque projet est unique. Nous simulons gratuitement le montant
-              des aides auxquelles vous êtes éligible.
+              Chaque projet est unique. Les aides dépendent notamment de la
+              puissance, du logement et du professionnel chargé des travaux.
             </p>
             <Button href="/estimer-mon-projet" className="mt-6">
               Demander une simulation gratuite

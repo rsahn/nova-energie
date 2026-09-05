@@ -6,7 +6,7 @@ export function getLocalBusinessJsonLd() {
     "@type": "LocalBusiness",
     "@id": `${SITE.url}/#organization`,
     name: SITE.name,
-    description: `Installateur de panneaux photovoltaïques certifié RGE en ${SITE.region}. Autoconsommation et panneaux solaires ${SITE.department}.`,
+    description: `Service d'accompagnement et de mise en relation pour les projets photovoltaïques en ${SITE.region} et dans les ${SITE.department}.`,
     url: SITE.url,
     telephone: SITE.phone,
     email: SITE.email,
@@ -55,12 +55,12 @@ export function getServiceJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
-    serviceType: "Installation panneaux solaires photovoltaïques",
+    serviceType: "Accompagnement et mise en relation pour projets photovoltaïques",
     provider: { "@id": `${SITE.url}/#organization` },
     areaServed: SITE.region,
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "Services photovoltaïques",
+      name: "Accompagnement de projets photovoltaïques",
       itemListElement: [
         {
           "@type": "Offer",

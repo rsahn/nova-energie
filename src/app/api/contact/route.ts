@@ -11,6 +11,7 @@ export interface ContactPayload {
   projectType: string;
   roofType?: string;
   message?: string;
+  partnerConsent: boolean;
 }
 
 async function sendViaSmtp(payload: ContactPayload) {
@@ -38,7 +39,7 @@ async function sendViaSmtp(payload: ContactPayload) {
     from: `"${SITE.name}" <${user}>`,
     to,
     replyTo: payload.email,
-    subject: `[Devis] ${payload.firstName} ${payload.lastName} — ${payload.postalCode}`,
+    subject: `[Projet solaire] ${payload.firstName} ${payload.lastName} — ${payload.postalCode}`,
     text: formatPlainText(payload),
     html: formatHtml(payload),
   });
@@ -63,7 +64,7 @@ async function sendViaResend(payload: ContactPayload) {
       from,
       to: [to],
       reply_to: payload.email,
-      subject: `[Devis] ${payload.firstName} ${payload.lastName} — ${payload.postalCode}`,
+      subject: `[Projet solaire] ${payload.firstName} ${payload.lastName} — ${payload.postalCode}`,
       html: formatHtml(payload),
     }),
   });
@@ -73,7 +74,7 @@ async function sendViaResend(payload: ContactPayload) {
 
 function formatPlainText(p: ContactPayload) {
   return [
-    `Nouvelle demande de devis — ${SITE.name}`,
+    `Nouvelle demande de mise en relation — ${SITE.name}`,
     "",
     `Nom : ${p.firstName} ${p.lastName}`,
     `Email : ${p.email}`,
@@ -89,7 +90,7 @@ function formatPlainText(p: ContactPayload) {
 
 function formatHtml(p: ContactPayload) {
   return `
-    <h2>Nouvelle demande de devis</h2>
+    <h2>Nouvelle demande de mise en relation</h2>
     <table cellpadding="6">
       <tr><td><strong>Nom</strong></td><td>${p.firstName} ${p.lastName}</td></tr>
       <tr><td><strong>Email</strong></td><td><a href="mailto:${p.email}">${p.email}</a></td></tr>
@@ -112,10 +113,11 @@ export async function POST(request: NextRequest) {
       !body.email ||
       !body.phone ||
       !body.postalCode ||
-      !body.projectType
+      !body.projectType ||
+      body.partnerConsent !== true
     ) {
       return NextResponse.json(
-        { error: "Champs obligatoires manquants" },
+        { error: "Champs obligatoires ou consentement à la mise en relation manquants" },
         { status: 400 }
       );
     }

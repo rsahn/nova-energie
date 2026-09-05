@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { MapPin } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { REALISATIONS } from "@/lib/data";
@@ -24,10 +23,10 @@ export function RealisationsGrid({
         {showTitle && (
           <div className="mb-12 text-center">
             <h2 className="text-3xl font-bold text-navy-900 md:text-4xl">
-              Nos installations en France
+              Exemples de projets photovoltaïques
             </h2>
             <p className="mt-4 text-gray-600">
-              Découvrez nos réalisations en Île-de-France et partout en France
+              Aperçu de configurations et de zones couvertes par notre réseau partenaire
             </p>
           </div>
         )}
@@ -64,7 +63,7 @@ export function RealisationsGrid({
         {limit && (
           <div className="mt-10 text-center">
             <Button href="/realisations" variant="outline">
-              Voir toutes nos réalisations
+              Voir tous les projets
             </Button>
           </div>
         )}

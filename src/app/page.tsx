@@ -3,10 +3,8 @@ import { CtaBanner } from "@/components/sections/CtaBanner";
 import { Features } from "@/components/sections/Features";
 import { Hero } from "@/components/sections/Hero";
 import { InstallationsMap } from "@/components/sections/InstallationsMap";
-import { Partners } from "@/components/sections/Partners";
 import { RealisationsGrid } from "@/components/sections/RealisationsGrid";
 import { Stats } from "@/components/sections/Stats";
-import { Testimonials } from "@/components/sections/Testimonials";
 import { Button } from "@/components/ui/Button";
 
 export default function HomePage() {
@@ -32,8 +30,6 @@ export default function HomePage() {
 
       <RealisationsGrid limit={6} />
       <InstallationsMap />
-      <Testimonials />
-      <Partners />
       <Features />
 
       <section className="border-t border-gray-100 bg-white py-16">
@@ -42,11 +38,12 @@ export default function HomePage() {
             Panneau solaire dans les Yvelines (78)
           </h2>
           <p className="mt-4 max-w-3xl text-gray-600">
-            Installateur certifié RGE, Nova Énergie pose des panneaux
-            photovoltaïques dans tout le département 78 : Montigny-le-Bretonneux,
+            Nova Énergie analyse votre besoin et vous met en relation avec une
+            entreprise partenaire indépendante pour votre projet photovoltaïque
+            dans le département 78 : Montigny-le-Bretonneux,
             Trappes, Guyancourt, Versailles, Élancourt et les communes
-            environnantes. Autoconsommation, aides de l&apos;État et devis
-            gratuit sous 48 h.
+            environnantes. Le partenaire établit le devis, facture et réalise
+            les travaux sous sa propre responsabilité.
           </p>
           <Link
             href="/panneaux-solaires/yvelines-78"

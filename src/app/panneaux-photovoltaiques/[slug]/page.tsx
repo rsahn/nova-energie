@@ -55,16 +55,16 @@ export default async function ServicePage({ params }: PageProps) {
 
             <div className="rounded-xl bg-solar-50 p-8">
               <h3 className="text-xl font-semibold text-navy-900">
-                Notre accompagnement
+                Le parcours avec Nova Énergie
               </h3>
               <ol className="mt-6 space-y-4">
                 {[
-                  "Visite et étude de faisabilité gratuite",
-                  "Dimensionnement optimal de l'installation",
-                  "Montage administratif (déclaration, raccordement Enedis)",
-                  "Installation par équipe certifiée RGE",
-                  "Mise en service et formation au monitoring",
-                  "Suivi et maintenance",
+                  "Qualification initiale de votre besoin par Nova Énergie",
+                  "Mise en relation avec une entreprise partenaire indépendante",
+                  "Visite technique et dimensionnement réalisés par le partenaire",
+                  "Devis et contrat établis directement par le partenaire",
+                  "Travaux, mise en service et garanties sous sa responsabilité",
+                  "Nova Énergie reste disponible pour faciliter les échanges",
                 ].map((step, i) => (
                   <li key={step} className="flex gap-3 text-gray-700">
                     <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-solar-600 text-xs font-bold text-white">

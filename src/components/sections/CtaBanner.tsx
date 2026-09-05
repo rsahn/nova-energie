@@ -8,8 +8,8 @@ export function CtaBanner() {
           Estimez votre projet solaire gratuitement
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-gray-300">
-          Étude personnalisée, simulation de rentabilité et accompagnement pour
-          les aides de l&apos;État — sans engagement.
+          Décrivez votre besoin. Nova Énergie le qualifie puis vous met en
+          relation avec une entreprise partenaire indépendante — sans engagement.
         </p>
         <Button href="/estimer-mon-projet" size="lg" className="mt-8">
           Estimer mon projet

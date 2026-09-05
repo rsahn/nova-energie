@@ -8,40 +8,40 @@ import { Button } from "@/components/ui/Button";
 import { LOCAL_CITIES, SITE, YVELINES_CITIES } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Panneau solaire 78 — Installateur Yvelines RGE",
-  description: `Installateur panneaux solaires dans les Yvelines (78). ${SITE.name}, certifié RGE : autoconsommation, devis gratuit, aides État. Intervention SQY, Versailles, Trappes et tout le 78.`,
+  title: "Panneau solaire 78 — Accompagnement photovoltaïque Yvelines",
+  description: `${SITE.name} accompagne votre projet solaire dans les Yvelines (78) et vous met en relation avec une entreprise partenaire indépendante pour l'étude, le devis et les travaux.`,
   keywords: [
     "panneau solaire 78",
     "panneaux solaires 78",
     "panneau solaire Yvelines",
     "installateur panneau solaire 78",
     "photovoltaïque Yvelines",
-    "installateur RGE 78",
+    "entreprise photovoltaïque 78",
   ],
   alternates: { canonical: `${SITE.url}/panneaux-solaires/yvelines-78` },
   openGraph: {
     title: "Panneau solaire 78 — Nova Énergie",
-    description: "Installateur panneaux solaires certifié RGE dans les Yvelines (78).",
+    description: "Accompagnement et mise en relation pour un projet solaire dans les Yvelines (78).",
     url: `${SITE.url}/panneaux-solaires/yvelines-78`,
   },
 };
 
 const HIGHLIGHTS = [
-  "Installateur certifié RGE et QualifElec dans le 78",
-  "Plus de 2 500 panneaux installés depuis 2018",
+  "Étude personnalisée de votre projet dans le 78",
+  "Mise en relation avec une entreprise partenaire indépendante",
   "Autoconsommation avec vente du surplus EDF OA",
   "Devis gratuit sous 48 h dans les Yvelines",
   "Prime autoconsommation et TVA 10 % éligibles",
-  "Garantie panneaux 25 ans — assurance décennale",
+  "Panneaux partenaires garantis jusqu'à 25 ans",
 ];
 
 export default function Yvelines78Page() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Installation panneaux solaires Yvelines (78)",
+    name: "Accompagnement projet panneaux solaires Yvelines (78)",
     description:
-      "Installateur panneaux photovoltaïques certifié RGE dans le département des Yvelines (78).",
+      "Accompagnement et mise en relation pour les projets photovoltaïques dans les Yvelines (78).",
     provider: {
       "@type": "LocalBusiness",
       name: SITE.name,
@@ -78,16 +78,16 @@ export default function Yvelines78Page() {
             Panneau solaire dans les Yvelines (78)
           </h1>
           <p className="mt-4 max-w-3xl text-lg text-gray-300">
-            {SITE.name} est votre installateur de panneaux photovoltaïques dans
-            le 78. Basés à {SITE.city}, nous intervenons sur tout le
+            {SITE.name} accompagne votre projet photovoltaïque dans le 78.
+            Depuis {SITE.city}, nous qualifions les demandes dans tout le
             département des Yvelines : Saint-Quentin-en-Yvelines, Versailles,
-            Rambouillet, Poissy et les communes voisines. Certifiés RGE, nous
-            installons des kits solaires en autoconsommation pour réduire votre
-            facture d&apos;électricité de 30 à 70&nbsp;%.
+            Rambouillet, Poissy et les communes voisines. Nous étudions des
+            besoins solaires en autoconsommation, puis une entreprise partenaire
+            indépendante établit le devis, facture et réalise les travaux.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <Button href="/estimer-mon-projet" size="lg">
-              Devis gratuit 78
+              Décrire mon projet
             </Button>
             <a
               href={`tel:${SITE.phoneRaw}`}
@@ -105,15 +105,15 @@ export default function Yvelines78Page() {
           <div className="grid gap-12 lg:grid-cols-2">
             <div>
               <h2 className="text-2xl font-bold text-navy-900">
-                Installateur panneau solaire 78 — pourquoi Nova Énergie ?
+                Panneau solaire 78 — pourquoi passer par Nova Énergie ?
               </h2>
               <p className="mt-4 text-gray-600">
                 Le département des Yvelines (78) bénéficie d&apos;un
                 ensoleillement suffisant pour rentabiliser une installation
                 photovoltaïque en autoconsommation. En choisissant un
-                installateur <strong>RGE</strong> comme {SITE.name}, vous
-                accédez aux aides de l&apos;État : prime autoconsommation, TVA
-                réduite et obligation d&apos;achat EDF OA.
+                professionnel adapté à votre projet, certaines aides peuvent
+                exiger des qualifications particulières. Nous vous présentons
+                les conditions à vérifier avant tout engagement.
               </p>
               <ul className="mt-6 space-y-3">
                 {HIGHLIGHTS.map((item) => (

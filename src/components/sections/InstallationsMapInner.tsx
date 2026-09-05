@@ -74,7 +74,7 @@ export function InstallationsMapInner({
                 href="/realisations"
                 className="text-solar-600 underline text-sm"
               >
-                Voir nos réalisations
+                Voir les projets
               </Link>
             </Popup>
           </Marker>

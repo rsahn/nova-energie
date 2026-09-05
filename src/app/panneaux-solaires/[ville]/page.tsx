@@ -20,8 +20,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const city = LOCAL_CITIES.find((c) => c.slug === ville);
   if (!city) return {};
 
-  const title = `Panneaux solaires ${city.name} (${SITE.departmentCode}) — Installateur RGE`;
-  const description = `Installateur panneaux solaires à ${city.name} (${city.postalCode}). Devis gratuit, autoconsommation, aides État. ${SITE.name}, certifié RGE en Yvelines.`;
+  const title = `Panneaux solaires ${city.name} (${SITE.departmentCode}) — Accompagnement local`;
+  const description = `Projet de panneaux solaires à ${city.name} (${city.postalCode}) : ${SITE.name} qualifie votre besoin et vous met en relation avec une entreprise partenaire indépendante.`;
 
   return {
     title,
@@ -54,7 +54,7 @@ export default async function LocalCityPage({ params }: PageProps) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: `Installation panneaux solaires ${city.name}`,
+    name: `Accompagnement projet panneaux solaires ${city.name}`,
     description: city.intro,
     provider: {
       "@type": "LocalBusiness",
@@ -95,7 +95,7 @@ export default async function LocalCityPage({ params }: PageProps) {
           <p className="mt-4 max-w-2xl text-lg text-gray-300">{city.intro}</p>
           <div className="mt-8 flex flex-wrap gap-4">
             <Button href="/estimer-mon-projet" size="lg">
-              Devis gratuit
+              Décrire mon projet
             </Button>
             <a
               href={`tel:${SITE.phoneRaw}`}
@@ -113,12 +113,14 @@ export default async function LocalCityPage({ params }: PageProps) {
           <div className="grid gap-12 lg:grid-cols-2">
             <div>
               <h2 className="text-2xl font-bold text-navy-900">
-                Votre installateur RGE à {city.name}
+                Votre projet solaire à {city.name}
               </h2>
               <p className="mt-4 text-gray-600">
                 {SITE.name} intervient à {city.name} ({city.distance}). Nous
-                installons des kits photovoltaïques en autoconsommation avec
-                vente du surplus à EDF OA, pour réduire votre facture de{" "}
+                vous aide à définir votre projet photovoltaïque en
+                autoconsommation. Une entreprise partenaire indépendante réalise
+                ensuite l&apos;étude technique, le devis et les travaux, pour viser
+                une réduction de votre facture pouvant atteindre{" "}
                 <strong>30 à 70&nbsp;%</strong>.
               </p>
               <ul className="mt-6 space-y-3">
@@ -148,9 +150,9 @@ export default async function LocalCityPage({ params }: PageProps) {
                   Valorisation de votre bien immobilier à {city.postalCode}
                 </li>
                 <li>
-                  Installateur certifié{" "}
+                  Conditions d&apos;accès aux{" "}
                   <Link href="/aides-et-subventions" className="text-solar-700 underline">
-                    RGE — aides de l&apos;État
+                    aides de l&apos;État
                   </Link>
                 </li>
               </ul>
@@ -167,7 +169,7 @@ export default async function LocalCityPage({ params }: PageProps) {
         <section className="bg-gray-50 py-16">
           <div className="mx-auto max-w-7xl px-4 sm:px-6">
             <h2 className="text-2xl font-bold text-navy-900">
-              Nos réalisations à {city.name}
+              Exemples de projets à {city.name}
             </h2>
             <RealisationsGrid
               limit={3}

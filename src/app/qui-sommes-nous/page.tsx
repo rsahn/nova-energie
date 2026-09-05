@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Award, CheckCircle, Users } from "lucide-react";
+import { ClipboardCheck, CheckCircle, Users } from "lucide-react";
 import { CtaBanner } from "@/components/sections/CtaBanner";
 import { Stats } from "@/components/sections/Stats";
 import { Button } from "@/components/ui/Button";
@@ -8,7 +8,7 @@ import { SITE } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Qui sommes-nous ?",
-  description: `${SITE.name} — installateur photovoltaïque certifié RGE depuis ${SITE.since} en ${SITE.region}.`,
+  description: `${SITE.name} — accompagnement et mise en relation pour les projets photovoltaïques dans les Yvelines et en ${SITE.region}.`,
 };
 
 const VALUES = [
@@ -27,8 +27,8 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <h1 className="text-4xl font-bold md:text-5xl">Qui sommes-nous ?</h1>
           <p className="mt-4 max-w-2xl text-lg text-gray-300">
-            {SITE.name}, spécialiste du photovoltaïque depuis {SITE.since},
-            basée à {SITE.city} en {SITE.region}.
+            {SITE.name}, service local d&apos;accompagnement de projets
+            photovoltaïques à {SITE.city} et dans les Yvelines.
           </p>
         </div>
       </section>
@@ -50,10 +50,11 @@ export default function AboutPage() {
               Une entreprise de confiance
             </h2>
             <p className="mt-4 leading-relaxed text-gray-600">
-              Depuis {SITE.since}, nous accompagnons particuliers, entreprises et
-              collectivités dans leur transition vers l&apos;énergie solaire. Notre
-              équipe certifiée RGE et QualifElec intervient sur l&apos;ensemble de
-              l&apos;Île-de-France.
+              Nous aidons particuliers, entreprises et collectivités à clarifier
+              leur besoin photovoltaïque. Après cette première qualification,
+              nous les mettons en relation avec une entreprise partenaire
+              indépendante qui réalise l&apos;étude technique, établit le devis,
+              facture et exécute les travaux sous sa responsabilité.
             </p>
             <ul className="mt-6 space-y-3">
               {VALUES.map((v) => (
@@ -75,9 +76,9 @@ export default function AboutPage() {
           <div className="grid gap-8 md:grid-cols-3">
             {[
               {
-                icon: Award,
-                title: "Certifié RGE",
-                text: "Éligible aux aides de l'État et aux primes autoconsommation.",
+                icon: ClipboardCheck,
+                title: "Étude personnalisée",
+                text: "Un projet étudié selon votre toiture, vos usages et votre budget.",
               },
               {
                 icon: Users,
@@ -87,7 +88,7 @@ export default function AboutPage() {
               {
                 icon: CheckCircle,
                 title: "Suivi après-vente",
-                text: "Maintenance, monitoring et SAV réactif sur toutes nos installations.",
+                text: "Le partenaire contractant reste responsable des travaux, des garanties et du SAV.",
               },
             ].map(({ icon: Icon, title, text }) => (
               <div key={title} className="rounded-xl bg-white p-8 shadow-sm">

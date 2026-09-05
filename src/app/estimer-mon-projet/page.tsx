@@ -6,14 +6,14 @@ import { SITE } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Estimer mon projet",
   description:
-    "Demandez une étude gratuite pour votre installation de panneaux solaires.",
+    "Décrivez votre projet solaire et demandez une mise en relation avec une entreprise partenaire indépendante.",
 };
 
 const STEPS = [
-  "Étude de faisabilité gratuite",
-  "Simulation de rentabilité personnalisée",
-  "Accompagnement aides de l'État (MaPrimeRénov', prime autoconsommation)",
-  "Devis détaillé sans engagement",
+  "Qualification initiale de votre besoin",
+  "Présentation des solutions envisageables",
+  "Mise en relation avec une entreprise partenaire indépendante",
+  "Étude technique et devis établis directement par le partenaire",
 ];
 
 export default function EstimatePage() {
@@ -24,7 +24,8 @@ export default function EstimatePage() {
           <h1 className="text-4xl font-bold md:text-5xl">Estimer mon projet</h1>
           <p className="mt-4 max-w-2xl text-lg text-gray-300">
             Remplissez le formulaire — nous vous recontactons sous 48h pour une
-            étude personnalisée et gratuite.
+            qualification initiale de votre besoin et organiser la mise en
+            relation avec une entreprise partenaire.
           </p>
         </div>
       </section>
@@ -33,7 +34,7 @@ export default function EstimatePage() {
         <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-5">
           <div className="lg:col-span-2">
             <h2 className="text-2xl font-bold text-navy-900">
-              Ce que comprend votre étude
+              Comment fonctionne la mise en relation
             </h2>
             <ul className="mt-6 space-y-4">
               {STEPS.map((step) => (

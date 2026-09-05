@@ -40,11 +40,10 @@ export function Hero() {
 
       <div className="relative mx-auto flex min-h-[520px] max-w-7xl flex-col justify-center px-4 py-20 sm:px-6 md:min-h-[600px]">
         <p className="mb-3 text-sm font-medium uppercase tracking-widest text-solar-100">
-          Entreprise locale — {SITE.city}
+          Accompagnement local — {SITE.city}
         </p>
         <h1 className="max-w-3xl text-4xl font-bold leading-tight text-white md:text-5xl lg:text-6xl">
-          Passez à l&apos;autoconsommation solaire avec une entreprise de
-          proximité
+          Votre projet solaire accompagné de l&apos;étude à la mise en relation
         </h1>
         <p className="mt-6 max-w-xl text-lg text-gray-200">{slide.title}</p>
         <div className="mt-8 flex flex-wrap gap-4">
@@ -52,7 +51,7 @@ export function Hero() {
             Estimer mon projet
           </Button>
           <Button href="/realisations" size="lg" variant="white">
-            Voir nos réalisations
+            Voir les projets
           </Button>
         </div>
       </div>
