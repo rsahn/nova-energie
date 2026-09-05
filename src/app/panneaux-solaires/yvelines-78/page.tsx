@@ -27,12 +27,35 @@ export const metadata: Metadata = {
 };
 
 const HIGHLIGHTS = [
-  "Étude personnalisée de votre projet dans le 78",
+  "Qualification gratuite de votre besoin dans le 78",
   "Mise en relation avec une entreprise partenaire indépendante",
-  "Autoconsommation avec vente du surplus EDF OA",
-  "Devis gratuit sous 48 h dans les Yvelines",
-  "Prime autoconsommation et TVA 10 % éligibles",
-  "Panneaux partenaires garantis jusqu'à 25 ans",
+  "Étude technique et devis établis par le partenaire",
+  "Comparaison autoconsommation totale ou vente du surplus",
+  "Vérification des démarches avant engagement",
+  "Un interlocuteur local pour faciliter les échanges",
+];
+
+const FAQ = [
+  {
+    question: "Faut-il une autorisation pour installer des panneaux solaires dans les Yvelines ?",
+    answer:
+      "Oui, une déclaration préalable de travaux est généralement nécessaire pour une installation en toiture, car elle modifie l'aspect extérieur du bâtiment. Le partenaire chargé du projet vérifie aussi les règles locales d'urbanisme avant les travaux.",
+  },
+  {
+    question: "Qui établit le devis et réalise les travaux ?",
+    answer:
+      "Nova Énergie qualifie votre demande et organise la mise en relation. L'entreprise partenaire indépendante effectue la visite technique, établit et facture son devis, réalise les travaux et assume les garanties liées à son contrat.",
+  },
+  {
+    question: "Peut-on autoconsommer et vendre le surplus ?",
+    answer:
+      "Le projet peut être étudié en autoconsommation totale ou avec injection du surplus. Le choix dépend de votre consommation, de la toiture, de la puissance envisagée et des conditions de raccordement applicables.",
+  },
+  {
+    question: "Quelles informations préparer pour une première étude ?",
+    answer:
+      "Préparez votre code postal, une facture d'électricité récente, le type de toiture, son orientation approximative et, si possible, quelques photos. Ces éléments permettent de mieux qualifier le besoin avant la visite technique.",
+  },
 ];
 
 export default function Yvelines78Page() {
@@ -62,11 +85,25 @@ export default function Yvelines78Page() {
     },
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: FAQ.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    })),
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
       <section className="bg-navy-900 py-20 text-white">
@@ -108,12 +145,12 @@ export default function Yvelines78Page() {
                 Panneau solaire 78 — pourquoi passer par Nova Énergie ?
               </h2>
               <p className="mt-4 text-gray-600">
-                Le département des Yvelines (78) bénéficie d&apos;un
-                ensoleillement suffisant pour rentabiliser une installation
-                photovoltaïque en autoconsommation. En choisissant un
-                professionnel adapté à votre projet, certaines aides peuvent
-                exiger des qualifications particulières. Nous vous présentons
-                les conditions à vérifier avant tout engagement.
+                Un bon projet solaire commence par l&apos;analyse de la consommation,
+                de l&apos;orientation, de l&apos;ombrage et de l&apos;état de la toiture.
+                Nova Énergie recueille ces premiers éléments et organise la mise
+                en relation avec un partenaire indépendant. Celui-ci confirme la
+                faisabilité sur place et reste seul responsable de son devis et
+                des travaux.
               </p>
               <ul className="mt-6 space-y-3">
                 {HIGHLIGHTS.map((item) => (
@@ -164,13 +201,62 @@ export default function Yvelines78Page() {
         </div>
       </section>
 
+      <section className="border-y border-gray-100 bg-white py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <h2 className="text-2xl font-bold text-navy-900">
+            Les étapes d&apos;un projet de panneaux solaires dans les Yvelines
+          </h2>
+          <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {[
+              ["1", "Votre besoin", "Consommation, adresse du projet, toiture et objectifs."],
+              ["2", "Mise en relation", "Sélection d'une entreprise partenaire adaptée au secteur."],
+              ["3", "Étude et devis", "Visite technique, dimensionnement et offre établis par le partenaire."],
+              ["4", "Réalisation", "Démarches, travaux, raccordement et garanties gérés par le partenaire."],
+            ].map(([number, title, text]) => (
+              <article key={number} className="rounded-xl border border-gray-200 p-6">
+                <span className="text-sm font-bold text-solar-700">Étape {number}</span>
+                <h3 className="mt-2 font-semibold text-navy-900">{title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-gray-600">{text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-gray-50 py-16">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6">
+          <h2 className="text-2xl font-bold text-navy-900">
+            Démarches à anticiper pour une installation photovoltaïque
+          </h2>
+          <div className="mt-6 space-y-4 text-gray-600">
+            <p>
+              Une installation en toiture nécessite généralement une déclaration
+              préalable en mairie. Les règles peuvent être plus contraignantes à
+              proximité d&apos;un site protégé ou selon le plan local d&apos;urbanisme.
+              Consultez la {" "}
+              <a href="https://www.service-public.fr/particuliers/vosdroits/F36798" target="_blank" rel="noopener noreferrer" className="text-solar-700 underline">
+                procédure officielle d&apos;urbanisme
+              </a>.
+            </p>
+            <p>
+              Le raccordement et la déclaration de l&apos;installation auprès du
+              gestionnaire de réseau dépendent du mode choisi : autoconsommation
+              totale, injection du surplus ou vente totale. Enedis détaille les {" "}
+              <a href="https://www.enedis.fr/raccordement-installation-production-electrique" target="_blank" rel="noopener noreferrer" className="text-solar-700 underline">
+                étapes du raccordement photovoltaïque
+              </a>.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-gray-50 py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <h2 className="text-2xl font-bold text-navy-900">
             Villes desservies dans le 78
           </h2>
           <p className="mt-2 text-gray-600">
-            Nova Énergie intervient dans tout le département des Yvelines.
+            Nova Énergie accompagne les demandes dans tout le département des Yvelines.
           </p>
           <ul className="mt-6 grid gap-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {YVELINES_CITIES.map((city) => {
@@ -193,6 +279,24 @@ export default function Yvelines78Page() {
               );
             })}
           </ul>
+        </div>
+      </section>
+
+      <section className="py-16">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6">
+          <h2 className="text-2xl font-bold text-navy-900">
+            Questions fréquentes sur les panneaux solaires dans le 78
+          </h2>
+          <div className="mt-8 space-y-4">
+            {FAQ.map((item) => (
+              <details key={item.question} className="rounded-xl border border-gray-200 bg-white p-5">
+                <summary className="cursor-pointer font-semibold text-navy-900">
+                  {item.question}
+                </summary>
+                <p className="mt-3 leading-relaxed text-gray-600">{item.answer}</p>
+              </details>
+            ))}
+          </div>
         </div>
       </section>
 
